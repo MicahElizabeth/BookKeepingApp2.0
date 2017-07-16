@@ -1,0 +1,13 @@
+/Users/kim/Projects/TestingConnection/TestingConnection/obj/iPhoneSimulator/Debug/Xamarin.iOS,Version=v1.0.AssemblyAttribute.cs
+/Users/kim/Projects/TestingConnection/TestingConnection/obj/iPhoneSimulator/Debug/ibtool/_BundleResourceWithLogicalName.items
+/Users/kim/Projects/TestingConnection/TestingConnection/obj/iPhoneSimulator/Debug/actool/_PartialAppManifest.items
+/Users/kim/Projects/TestingConnection/TestingConnection/obj/iPhoneSimulator/Debug/actool/_BundleResourceWithLogicalName.items
+/Users/kim/Projects/TestingConnection/TestingConnection/obj/iPhoneSimulator/Debug/optimized/
+/Users/kim/Projects/TestingConnection/TestingConnection/bin/iPhoneSimulator/Debug/TestingConnection.exe.mdb
+/Users/kim/Projects/TestingConnection/TestingConnection/bin/iPhoneSimulator/Debug/TestingConnection.exe
+/Users/kim/Projects/TestingConnection/TestingConnection/obj/iPhoneSimulator/Debug/TestingConnection.exe
+/Users/kim/Projects/TestingConnection/TestingConnection/obj/iPhoneSimulator/Debug/TestingConnection.exe.mdb
+/Users/kim/Projects/TestingConnection/TestingConnection/obj/iPhoneSimulator/Debug/device-builds/iphone9.2-10.3/ibtool/_BundleResourceWithLogicalName.items
+/Users/kim/Projects/TestingConnection/TestingConnection/obj/iPhoneSimulator/Debug/device-builds/iphone9.2-10.3/actool/_PartialAppManifest.items
+/Users/kim/Projects/TestingConnection/TestingConnection/obj/iPhoneSimulator/Debug/device-builds/iphone9.2-10.3/actool/_BundleResourceWithLogicalName.items
+/Users/kim/Projects/TestingConnection/TestingConnection/obj/iPhoneSimulator/Debug/device-builds/iphone9.2-10.3/optimized/

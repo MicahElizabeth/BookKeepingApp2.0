@@ -1,0 +1,14 @@
+/Users/kim/Projects/testing/testing/obj/iPhoneSimulator/Debug/Xamarin.iOS,Version=v1.0.AssemblyAttribute.cs
+/Users/kim/Projects/testing/testing/obj/iPhoneSimulator/Debug/ibtool/_BundleResourceWithLogicalName.items
+/Users/kim/Projects/testing/testing/obj/iPhoneSimulator/Debug/actool/_PartialAppManifest.items
+/Users/kim/Projects/testing/testing/obj/iPhoneSimulator/Debug/actool/_BundleResourceWithLogicalName.items
+/Users/kim/Projects/testing/testing/obj/iPhoneSimulator/Debug/optimized/
+/Users/kim/Projects/testing/testing/bin/iPhoneSimulator/Debug/testing.exe.mdb
+/Users/kim/Projects/testing/testing/bin/iPhoneSimulator/Debug/testing.exe
+/Users/kim/Projects/testing/testing/obj/iPhoneSimulator/Debug/testing.exe
+/Users/kim/Projects/testing/testing/obj/iPhoneSimulator/Debug/testing.exe.mdb
+/Users/kim/Projects/testing/testing/bin/iPhoneSimulator/Debug/System.Threading.Tasks.Extensions.dll
+/Users/kim/Projects/testing/testing/bin/iPhoneSimulator/Debug/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/Users/kim/Projects/testing/testing/bin/iPhoneSimulator/Debug/Microsoft.Extensions.Logging.Abstractions.dll
+/Users/kim/Projects/testing/testing/bin/iPhoneSimulator/Debug/Microsoft.Extensions.Logging.dll
+/Users/kim/Projects/testing/testing/bin/iPhoneSimulator/Debug/Npgsql.dll
