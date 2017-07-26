@@ -53,53 +53,53 @@ export class UserService {
     this.http.get('/api/logout').subscribe();
     this.router.navigate(['home']);
   }
-
-  sendMessage(id, mess, pushTime) {
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-
-
-    return this.http
-      .post(
-      '/api/message',
-      JSON.stringify({ id, mess, pushTime }),
-      { headers }
-      )
-      .map(res => res.json());
-  }
-  getMessages() {
-    let headers  = new Headers();
-    headers.append('Content-Type', 'application/jason');
-
-    return this.http
-      .get(
-      '/api/readmessages'
-      )
-      .map(res => res.json());
-  }
-
-  sendQuestion(id, quest, qtype, pushTime) {
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-
-
-    return this.http
-      .post(
-      '/api/question',
-      JSON.stringify({ id, quest, qtype, pushTime }),
-      { headers }
-      )
-      .map(res => res.json());
-  }
-
-  getQuestions() {
-    let headers  = new Headers();
-    headers.append('Content-Type', 'application/jason');
-
-    return this.http
-      .get(
-      '/api/readquestions'
-      )
-      .map(res => res.json());
-  }
+  //
+  // sendMessage(id, mess, pushTime) {
+  //   let headers = new Headers();
+  //   headers.append('Content-Type', 'application/json');
+  //
+  //
+  //   return this.http
+  //     .post(
+  //     '/api/message',
+  //     JSON.stringify({ id, mess, pushTime }),
+  //     { headers }
+  //     )
+  //     .map(res => res.json());
+  // }
+  // getMessages() {
+  //   let headers  = new Headers();
+  //   headers.append('Content-Type', 'application/jason');
+  //
+  //   return this.http
+  //     .get(
+  //     '/api/readmessages'
+  //     )
+  //     .map(res => res.json());
+  // }
+  //
+  // sendQuestion(id, quest, qtype, pushTime) {
+  //   let headers = new Headers();
+  //   headers.append('Content-Type', 'application/json');
+  //
+  //
+  //   return this.http
+  //     .post(
+  //     '/api/question',
+  //     JSON.stringify({ id, quest, qtype, pushTime }),
+  //     { headers }
+  //     )
+  //     .map(res => res.json());
+  // }
+  //
+  // getQuestions() {
+  //   let headers  = new Headers();
+  //   headers.append('Content-Type', 'application/jason');
+  //
+  //   return this.http
+  //     .get(
+  //     '/api/readquestions'
+  //     )
+  //     .map(res => res.json());
+  // }
 }

@@ -18,7 +18,7 @@ sleep(5)  # Delay is required for allowing the Database to startup
 
 app = Flask(__name__)
 app.secret_key = "ASECRETKEYGOESHERE"
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://pgdbuser:pgdbpassword@db/emamobilehealth"
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://pgdbuser:pgdbpassword@db/bookkeepingdb"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.config['DEBUG'] = True
 
@@ -79,69 +79,69 @@ def login():
 
     return jsonify({'error': 'could not find user'}), 500
 
-@app.route('/api/message', methods=['POST'])
-def sendMessage():
-    body = request.json
-
-    user = db.session.query(User).filter_by(uid=body['id']).first()
-
-    if user is None:
-        return jsonify({'error': 'That user does not exist'}), 500
-
-    msg = {'uid': body['id'], 'message': str(body['mess']), 'pushTime': body['pushTime']}
-    msg = Message(**msg)
-    db.session.add(msg)
-    db.session.commit()
-
-    #if user is None:
-        #return jsonify({'error': 'cuold not find id'}), 500
-
-    return jsonify({'result': str(body['mess'])}), 200
-
-@app.route('/api/readmessages', methods=['GET'])
-def checkMessages():
-    message_schema = MessageSchema(many=True)
-    try:
-        msgs = db.session.query(Message).filter_by(uid = current_user.id).all()
-        result = message_schema.dump(msgs)
-        #result['data'] = ["one", "two", "three"]
-    except:
-        s = '<h1>ERROR GET Messages </h1>'
-        return s
-
-    return jsonify({'result': result.data})
-
-@app.route('/api/question', methods=['POST'])
-def sendQuestion():
-    body = request.json
-
-    user = db.session.query(User).filter_by(uid=body['id']).first()
-
-    if user is None:
-        return jsonify({'error': 'That user does not exist'}), 500
-
-    qst = {'uid': body['id'], 'question': str(body['quest']), 'qtype': body['qtype'], 'pushTime': body['pushTime']}
-    qst = Question(**qst)
-    db.session.add(qst)
-    db.session.commit()
-
-    #if user is None:
-        #return jsonify({'error': 'cuold not find id'}), 500
-
-    return jsonify({'result': str(body['quest'])}), 200
-
-@app.route('/api/readquestions', methods=['GET'])
-def checkQuestions():
-    question_schema = QuestionSchema(many=True)
-    try:
-        qsts = db.session.query(Question).filter_by(uid = current_user.id).all()
-        result = question_schema.dump(qsts)
-        #result['data'] = ["one", "two", "three"]
-    except:
-        s = '<h1>ERROR GET Questions </h1>'
-        return s
-
-    return jsonify({'result': result.data})
+# @app.route('/api/message', methods=['POST'])
+# def sendMessage():
+#     body = request.json
+#
+#     user = db.session.query(User).filter_by(uid=body['id']).first()
+#
+#     if user is None:
+#         return jsonify({'error': 'That user does not exist'}), 500
+#
+#     msg = {'uid': body['id'], 'message': str(body['mess']), 'pushTime': body['pushTime']}
+#     msg = Message(**msg)
+#     db.session.add(msg)
+#     db.session.commit()
+#
+#     #if user is None:
+#         #return jsonify({'error': 'cuold not find id'}), 500
+#
+#     return jsonify({'result': str(body['mess'])}), 200
+#
+# @app.route('/api/readmessages', methods=['GET'])
+# def checkMessages():
+#     message_schema = MessageSchema(many=True)
+#     try:
+#         msgs = db.session.query(Message).filter_by(uid = current_user.id).all()
+#         result = message_schema.dump(msgs)
+#         #result['data'] = ["one", "two", "three"]
+#     except:
+#         s = '<h1>ERROR GET Messages </h1>'
+#         return s
+#
+#     return jsonify({'result': result.data})
+#
+# @app.route('/api/question', methods=['POST'])
+# def sendQuestion():
+#     body = request.json
+#
+#     user = db.session.query(User).filter_by(uid=body['id']).first()
+#
+#     if user is None:
+#         return jsonify({'error': 'That user does not exist'}), 500
+#
+#     qst = {'uid': body['id'], 'question': str(body['quest']), 'qtype': body['qtype'], 'pushTime': body['pushTime']}
+#     qst = Question(**qst)
+#     db.session.add(qst)
+#     db.session.commit()
+#
+#     #if user is None:
+#         #return jsonify({'error': 'cuold not find id'}), 500
+#
+#     return jsonify({'result': str(body['quest'])}), 200
+#
+# @app.route('/api/readquestions', methods=['GET'])
+# def checkQuestions():
+#     question_schema = QuestionSchema(many=True)
+#     try:
+#         qsts = db.session.query(Question).filter_by(uid = current_user.id).all()
+#         result = question_schema.dump(qsts)
+#         #result['data'] = ["one", "two", "three"]
+#     except:
+#         s = '<h1>ERROR GET Questions </h1>'
+#         return s
+#
+#     return jsonify({'result': result.data})
 
 @app.route('/api/logout', methods=['GET'])
 def logout():
@@ -186,20 +186,20 @@ def get_users():
     return jsonify({'result': result.data})
 
 # Need for testing, not for production
-@app.route('/api/messages', methods=['GET'])
-def get_messages():
-    """ THIS SHOULD NOT MAKE IT TO PRODUCTION """
-    message_schema = MessageSchema(many=True)
-    result = {}
-    try:
-        msgs = db.session.query(Message).all()
-        result = message_schema.dump(msgs)
-        #result['data'] = ["one", "two", "three"]
-    except Exception as inst:
-        s = '<h1>ERROR GET Messages .{0}. .{1}. .{2}.</h1>'.format(type(inst), inst.args, inst)
-        return s
-
-    return jsonify({'result': result.data})
+# @app.route('/api/messages', methods=['GET'])
+# def get_messages():
+#     """ THIS SHOULD NOT MAKE IT TO PRODUCTION """
+#     message_schema = MessageSchema(many=True)
+#     result = {}
+#     try:
+#         msgs = db.session.query(Message).all()
+#         result = message_schema.dump(msgs)
+#         #result['data'] = ["one", "two", "three"]
+#     except Exception as inst:
+#         s = '<h1>ERROR GET Messages .{0}. .{1}. .{2}.</h1>'.format(type(inst), inst.args, inst)
+#         return s
+#
+#     return jsonify({'result': result.data})
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)

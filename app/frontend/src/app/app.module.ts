@@ -9,9 +9,6 @@ import {HomeComponent} from "./home/components/home.component";
 
 import {RegisterComponent} from "./register/components/register.component";
 import {LoginComponent} from "./login/components/login.component";
-import {MessageComponent} from "./Message/components/message.component";
-import {SurveyComponent} from "./Survey/components/survey.component";
-
 import {UserService} from "./user/services/user.service";
 
 import {routing, appRoutingProviders} from './app.routing';
@@ -35,9 +32,7 @@ import {LocalStorageModule} from 'angular-2-local-storage';
         RegisterComponent,
         NavComponent,
         FooterComponent,
-        LoginComponent,
-        MessageComponent,
-        SurveyComponent
+        LoginComponent
     ],
     providers: [
         appRoutingProviders,

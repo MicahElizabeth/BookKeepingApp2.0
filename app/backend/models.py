@@ -43,34 +43,34 @@ class User(db.Model, UserMixin):
     def is_anonymous(self):
         return False
 
-class Message(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    uid = db.Column(db.Integer, db.ForeignKey('user.uid'))
-    message = db.Column(db.String(120), default="")
-    timeStamp = db.Column(db.DateTime, default=datetime.datetime.now) #could be used for read time
-    pushTime = db.Column(db.DateTime, default=datetime.datetime.now)
-    read = db.Column(db.Integer, default = 0) #0 for unread 1 for web read
-        #(later can change fro mobile read)
-    def mark_read(self):
-        self.read = 1
-        return True
-    def is_read(self):
-        return self.read == 1
-
-class Question(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    uid = db.Column(db.Integer, db.ForeignKey('user.uid'))
-    question = db.Column(db.String(120), default="")
-    qtype = db.Column(db.String(15), default ="text")
-    timeStamp = db.Column(db.DateTime, default=datetime.datetime.now) #could be used for read time
-    pushTime = db.Column(db.DateTime, default=datetime.datetime.now)
-    read = db.Column(db.Integer, default = 0) #0 for unread 1 for web read
-
-class Answer(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    qid = db.Column(db.Integer, db.ForeignKey('question.id')) #only one answer per question
-    response = db.Column(db.String(120), default="")
-    timeComplete = db.Column(db.DateTime, default=datetime.datetime.now)
+# class Message(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     uid = db.Column(db.Integer, db.ForeignKey('user.uid'))
+#     message = db.Column(db.String(120), default="")
+#     timeStamp = db.Column(db.DateTime, default=datetime.datetime.now) #could be used for read time
+#     pushTime = db.Column(db.DateTime, default=datetime.datetime.now)
+#     read = db.Column(db.Integer, default = 0) #0 for unread 1 for web read
+#         #(later can change fro mobile read)
+#     def mark_read(self):
+#         self.read = 1
+#         return True
+#     def is_read(self):
+#         return self.read == 1
+#
+# class Question(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     uid = db.Column(db.Integer, db.ForeignKey('user.uid'))
+#     question = db.Column(db.String(120), default="")
+#     qtype = db.Column(db.String(15), default ="text")
+#     timeStamp = db.Column(db.DateTime, default=datetime.datetime.now) #could be used for read time
+#     pushTime = db.Column(db.DateTime, default=datetime.datetime.now)
+#     read = db.Column(db.Integer, default = 0) #0 for unread 1 for web read
+#
+# class Answer(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     qid = db.Column(db.Integer, db.ForeignKey('question.id')) #only one answer per question
+#     response = db.Column(db.String(120), default="")
+#     timeComplete = db.Column(db.DateTime, default=datetime.datetime.now)
 
 @lm.user_loader
 def user_loader(id):
@@ -90,12 +90,12 @@ def unauthorized_handler():
 class UserSchema(ModelSchema):
     class Meta:
         fields = ('uid', 'email', 'first_name', 'last_name')
-class MessageSchema(ModelSchema):
-    class Meta:
-        fields = ('uid','message', 'timeStamp', 'pushTime', 'read')
-class QuestionSchema(ModelSchema):
-    class Meta:
-        fields = ('uid', 'id', 'question', 'qtype', 'timeStamp', 'pushTime', 'read')
-class AnswerSchema(ModelSchema):
-    class Meta:
-        fields = ('qid', 'response', 'timeComplete')
+# class MessageSchema(ModelSchema):
+#     class Meta:
+#         fields = ('uid','message', 'timeStamp', 'pushTime', 'read')
+# class QuestionSchema(ModelSchema):
+#     class Meta:
+#         fields = ('uid', 'id', 'question', 'qtype', 'timeStamp', 'pushTime', 'read')
+# class AnswerSchema(ModelSchema):
+#     class Meta:
+#         fields = ('qid', 'response', 'timeComplete')

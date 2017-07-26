@@ -19,8 +19,4 @@ export class RegisterService {
     return this.http.post('api/register', body, { headers: headers })
       .map(res => res.json());
   }
-
-  getMotivated() {
-    return this.http.get('http://ec2-54-201-251-84.us-west-2.compute.amazonaws.com:8080/combo/tyler').map(res => res.json());
-  }
 }
